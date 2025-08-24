@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tienda premium de diseño con carrito animado y compra por WhatsApp. Calidad, estilo y funcionalidad." />
+    <meta name="keywords" content="tienda online, productos premium, diseño moderno, comprar por WhatsApp" />
+    <meta name="author" content="ANDSHOP Store" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href="assets/logo.png" type="image/x-icon" />
+    <link rel="canonical" href="https://tudominio.com  " />
+
+    <title>ANDSHOP | Diseño Premium, Calidad Superior</title>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  "
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  "
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com  "></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4f46e5',
+                        'primary-dark': '#4338ca',
+                        accent: '#ec4899',
+                        'bg-light': '#f9fafb',
+                        'text-light': '#111827',
+                        'text-muted': '#6b7280',
+                    },
+                    boxShadow: {
+                        'card': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'scale-up': 'scaleUp 0.3s ease-out',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload de imagen crítica -->
+    <link rel="preload" as="image" href="assets/fondo.png">
+</head>
+
+<body class="bg-bg-light text-text-light font-sans antialiased" id="top">
+    <!-- Skip to content (accesibilidad) -->
+    <a href="#main" class="sr-only focus:not-sr-only">Saltar al contenido</a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300" role="banner">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="assets/logo.png" alt="Logo de ANDSHOP, tienda premium de diseño"
+                    class="h-10 w-10 rounded-full object-cover shadow-sm">
+                <h1 class="text-2xl font-bold text-primary">ANDSHOP</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8" aria-label="Navegación principal">
+                <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-200">Inicio</a>
+                <a href="#products"
+                    class="text-gray-700 hover:text-primary transition-colors duration-200">Productos</a>
+                <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-200">Nosotros</a>
+            </nav>
+            <button id="cart-icon" aria-label="Ver carrito"
+                class="relative focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-full p-1">
+                <i class="fas fa-shopping-bag text-xl text-gray-700"></i>
+                <span id="cart-count"
+                    class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-primary/50 z-0"></div>
+        <img src="assets/fondo.png" alt="Colección de productos premium en entorno urbano moderno"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-105"
+            loading="eager">
+        <div class="relative z-10 max-w-4xl px-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in" style="animation-delay: 0.2s">
+                Diseño que inspira
+            </h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto" style="animation-delay: 0.4s">
+                Productos cuidadosamente diseñados para quienes exigen calidad, estilo y funcionalidad.
+            </p>
+            <a href="#products"
+                class="inline-block bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
+                aria-label="Ver productos">
+                Ver productos
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main">
+
+        <!-- Products Section -->
+        <section id="products" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <!-- Título principal -->
+                <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Nuestros Productos</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Explora nuestras colecciones cuidadosamente seleccionadas.
+                </p>
+
+                <!-- Filtros -->
+                <div class="flex justify-center space-x-6 mb-12">
+                    <button class="filter-btn active text-primary font-medium border-b-2 border-primary pb-1"
+                        data-category="all">Todos</button>
+                    <button class="filter-btn text-gray-600 hover:text-primary transition"
+                        data-category="calzado">Calzado</button>
+                    <button class="filter-btn text-gray-600 hover:text-primary transition"
+                        data-category="ropa">Ropa</button>
+                    <button class="filter-btn text-gray-600 hover:text-primary transition"
+                        data-category="accesorios">Accesorios</button>
+                    <button class="filter-btn text-gray-600 hover:text-primary transition"
+                        data-category="tecnologia">Tecnología</button>
+                    <button class="filter-btn text-gray-600 hover:text-primary transition"
+                        data-category="deporte">Deporte</button>
+                </div>
+
+                <!-- Contenedor de productos -->
+                <div id="products-container">
+                    <!-- Las secciones se generarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-light animate-fade-in"
+                    style="animation-delay: 0.2s">
+                    Sobre Nosotros
+                </h2>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">Nuestra Historia</h3>
+                        <p class="text-gray-700 mb-4">
+                            Desde 2020, ANDSHOP se ha dedicado a ofrecer productos de diseño exclusivo, calidad
+                            artesanal y atención al detalle.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Cada pieza es seleccionada con pasión para quienes valoran lo auténtico y duradero.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-800">Síguenos</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" aria-label="Instagram"
+                                    class="text-gray-600 hover:text-primary transition"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-primary transition"><i
+                                        class="fab fa-facebook"></i></a>
+                                <a href="#" aria-label="TikTok" class="text-gray-600 hover:text-primary transition"><i
+                                        class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="assets/about.jpg" alt="Equipo de ANDSHOP trabajando en diseño de productos"
+                            class="rounded-lg shadow-lg w-full h-auto object-cover" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <img src="assets/logo.png" alt="Logo de ANDSHOP" class="h-8 w-8 mr-2 rounded-full">
+                        ANDSHOP
+                    </h3>
+                    <p class="text-gray-400 text-sm">Diseño. Calidad. Estilo. Hecho para durar.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>📍 Av. Premium 123, Ciudad Moderna</li>
+                        <li>📞 <a href="tel:+56912345678" class="hover:text-white transition">+56 9 1234 5678</a></li>
+                        <li>✉️ <a href="mailto:info@andshop.com"
+                                class="hover:text-white transition">info@andshop.com</a></li>
+                        <li>💬 <a href="https://wa.me/56912345678  "
+                                class="text-green-400 hover:text-green-300 transition">Chatea con nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Redes Sociales</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="TikTok" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-700">
+            <p class="text-center text-gray-500 text-sm">
+                © 2025 ANDSHOP. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart-sidebar"
+        class="fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+        aria-label="Carrito de compras">
+        <div class="p-6 flex justify-between items-center border-b border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900">Tu Carrito</h3>
+            <button id="close-cart"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-1"
+                aria-label="Cerrar carrito">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="p-6 max-h-[calc(100vh-200px)] overflow-y-auto space-y-4">
+            <!-- Productos insertados dinámicamente -->
+        </div>
+        <div class="p-6 border-t border-gray-200 bg-gray-50">
+            <div class="flex justify-between mb-4 text-lg font-semibold text-gray-800">
+                <span>Total:</span>
+                <span id="cart-total">S/ 0</span>
+            </div>
+            <button id="checkout-btn"
+                class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium shadow transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Finalizar compra por WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 transition-opacity duration-300"
+        aria-hidden="true"></div>
+
+    <!-- Modal de Detalle del Producto -->
+    <div id="product-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 relative">
+                <!-- Botón cerrar -->
+                <button id="close-product-modal"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Imagen principal -->
+                <div class="mb-4">
+                    <img id="modal-product-image" src="" alt="" class="w-full h-64 object-cover rounded-lg">
+                </div>
+
+                <!-- Miniaturas -->
+                <div id="modal-thumbnails" class="flex gap-2 mb-4 overflow-x-auto">
+                    <!-- Se llenan con JS -->
+                </div>
+
+                <!-- Info -->
+                <h3 id="modal-product-name" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+                <p id="modal-product-description" class="text-gray-700 mb-4"></p>
+
+                <!-- Precio -->
+                <div class="flex items-center gap-2 mb-4">
+                    <span id="modal-product-discount" class="text-red-500 font-medium hidden"></span>
+                    <span id="modal-product-price" class="text-2xl font-bold text-primary"></span>
+                </div>
+
+                <!-- Tallas -->
+                <div class="mb-4">
+                    <label class="block font-medium mb-2">Talla</label>
+                    <div id="modal-sizes" class="flex flex-wrap gap-2">
+                        <!-- Se llenan con JS -->
+                    </div>
+                </div>
+
+                <!-- Colores -->
+                <div class="mb-4">
+                    <label class="block font-medium mb-2">Color</label>
+                    <div id="modal-colors" class="flex flex-wrap gap-2">
+                        <!-- Se llenan con JS -->
+                    </div>
+                </div>
+
+                <!-- Botón agregar -->
+                <button id="modal-add-to-cart"
+                    class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors">
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP (animaciones) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js  " defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js  " defer></script>
+
+    <!-- Scripts principales -->
+    <script src="js/cart.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/whatsapp.js" defer></script>
+    <script src="js/animations.js" defer></script>
+
+</body>
+
+</html>
