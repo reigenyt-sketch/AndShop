@@ -9,7 +9,7 @@
     // Configuración
     // ================================
     const WA_CONFIG = {
-        phone: '56978736507', // <-- Asegúrate de que este sea TU número correcto (solo números)
+        phone: '56978736507', // <-- Asegúrate de que este sea TU número correcto (solo números, incluyendo código país)
         businessName: 'AndShop',
         defaultMessage: 'Hola, me interesan estos productos:',
         orderSuccessMessage: '¡Pedido enviado! Te responderemos pronto.',
@@ -90,6 +90,7 @@
             total += subtotal;
 
             let itemDescription = item.name || 'Producto sin nombre';
+            // Ajustar según la estructura de tu item en el carrito
             if (item.variant) {
                 itemDescription += ` (${item.variant.color}, ${item.variant.size})`;
             }
@@ -104,20 +105,30 @@
     }
 
     // ================================
-    // Abrir WhatsApp (móvil o escritorio)
+    // Abrir WhatsApp (móvil o escritorio) - CORREGIDO
     // ================================
     function openWhatsApp(message) {
         console.log("📲 whatsapp.js: Intentando abrir WhatsApp...");
         const encoded = encodeURIComponent(message);
+        // Limpiar el número: solo números, incluyendo código de país
         const phone = WA_CONFIG.phone.replace(/\D/g, '');
+        console.log("📞 whatsapp.js: Número procesado:", phone);
 
+        // Detectar si es móvil para usar la URL correcta
         const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         console.log("📱 whatsapp.js: ¿Es móvil?", isMobile);
 
-        const baseUrl = isMobile ? `https://wa.me/${phone}` : `https://web.whatsapp.com/send?phone=${phone}`;
-        const url = `${baseUrl}&text=${encoded}`;
+        let url;
+        if (isMobile) {
+            // URL correcta para móviles: https://wa.me/NÚMERO?text=MENSAJE
+            url = `https://wa.me/${phone}?text=${encoded}`;
+        } else {
+            // URL correcta para web: https://web.whatsapp.com/send?phone=NÚMERO&text=MENSAJE
+            url = `https://web.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+        }
 
         console.log("🔗 whatsapp.js: URL de WhatsApp generada:", url);
+        // Abrir en nueva pestaña/ventana
         window.open(url, '_blank', 'noopener,noreferrer');
     }
 
@@ -126,11 +137,12 @@
     // ================================
     function showToast(text, type = 'info') {
         console.log(`🍞 whatsapp.js: Mostrando toast (${type}):`, text);
+        // Evitar toasts duplicados
         const existingToast = document.querySelector('#whatsapp-toast');
         if (existingToast) existingToast.remove();
 
         const toast = document.createElement('div');
-        toast.id = 'whatsapp-toast';
+        toast.id = 'whatsapp-toast'; // Para identificar y remover
         let bgColor, icon;
 
         switch (type) {
@@ -162,14 +174,16 @@
 
         document.body.appendChild(toast);
 
+        // Animar entrada
         setTimeout(() => toast.classList.add('opacity-100', 'translate-y-0'), 10);
 
+        // Desaparecer después de 4 segundos
         setTimeout(() => {
             toast.classList.remove('opacity-100', 'translate-y-0');
             toast.classList.add('opacity-0', 'translate-y-4');
             setTimeout(() => {
                 if (toast.parentElement) toast.remove();
-            }, 300);
+            }, 300); // Tiempo de la animación de salida
         }, 4000);
     }
 
