@@ -1,0 +1,286 @@
+[
+    {
+        "id": 1,
+        "name": "Nike Air Force",
+        "price": 250.00,
+        "image": "assets/products/Nike Air Force.png",
+        "images": [
+            "assets/products/Nike Air Force.png",
+            "assets/products/Nike Air Force.png"
+        ],
+        "description": "Zapatillas Nike Air Force blancas con diseño clásico y máxima comodidad.",
+        "category": "calzado",
+        "discount": 6,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Blanco Fuego",
+                "size": "42",
+                "stock": 1,
+                "image": "assets/products/Nike Air Force.png"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Vincha Absorbente",
+        "price": 12.00,
+        "image": "assets/products/vinchawrels.png",
+        "images": [
+            "assets/products/vinchawrels.png",
+            "assets/products/vinchawrels.png"
+        ],
+        "description": "Vincha deportiva absorbente, cómoda y antideslizante. Ideal para entrenamientos.",
+        "category": "deporte",
+        "discount": 10,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 1,
+                "image": "assets/products/vinchawrels.png"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Calculadora Científica",
+        "price": 50.00,
+        "image": "assets/products/calculadora.jpeg",
+        "images": [
+            "assets/products/calculadora.jpeg",
+            "assets/products/calculadora.jpeg"
+        ],
+        "description": "Calculadora científica con pantalla LCD, ideal para estudiantes y profesionales.",
+        "category": "tecnologia",
+        "discount": 10,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Gris",
+                "size": "Única",
+                "stock": 1,
+                "image": "assets/products/calculadora.jpeg"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Conjunto Deportivo",
+        "price": 55.00,
+        "image": "assets/products/deportiva.jpeg",
+        "images": [
+            "assets/products/deportiva.jpeg",
+            "assets/products/deportiva2.jpeg"
+        ],
+        "description": "Conjunto deportivo de short y polo, ideal para entrenar o usar en tu tiempo libre.",
+        "category": "deporte",
+        "discount": 6,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "M",
+                "stock": 2,
+                "image": "assets/products/deportiva.jpeg"
+            },
+            {
+                "color": "Blanco",
+                "size": "L",
+                "stock": 1,
+                "image": "assets/products/deportivablanca.jpeg"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Camiseta",
+        "price": 50.00,
+        "image": "assets/products/hypemode.jpeg",
+        "images": [
+            "assets/products/hypemode.jpeg",
+            "assets/products/hypemode.jpeg"
+        ],
+        "description": "Camiseta para hombres de hombros caídos",
+        "category": "ropa",
+        "discount": 8,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Azul",
+                "size": "L",
+                "stock": 1,
+                "image": "assets/products/hypemode.jpeg"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Kit de Aseo",
+        "price": 45.00,
+        "image": "assets/products/kit de aseo.png",
+        "images": [
+            "assets/products/kit de aseo.png",
+            "assets/products/kit de aseo.png"
+        ],
+        "description": "Kit de aseo profesional 4 en 1, recortador de vello nasal y de orejas recargable por USB, afeitadora de barba y cejas, herramientas de cuidado personal para hombres, 500mAh",
+        "category": "tecnologia",
+        "discount": 2,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 2,
+                "image": "assets/products/kit de aseo.png"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Mangas",
+        "price": 8.00,
+        "image": "assets/products/mangasnegras.png",
+        "images": [
+            "assets/products/mangasnegras.png",
+            "assets/products/mangasnegras.png"
+        ],
+        "description": "1 par de mangas protectoras de brazo con enfriamiento UV Beister, mangas protectoras del sol de verano para exteriores con agujero para el pulgar para hombres y mujeres con protección UV",
+        "category": "accesorios",
+        "discount": 15,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 9,
+                "image": "assets/products/mangasnegras.png"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Vendaje adhesivo",
+        "price": 4.00,
+        "image": "assets/products/vendaje.png",
+        "images": [
+            "assets/products/vendaje.png",
+            "assets/products/vendaje.png"
+        ],
+        "description": "vendas deportivas elásticas autoadhesivas - versátiles para protección de dedos, tobillos, muñecas, cintura, rodillas y codos (sin caja)",
+        "category": "deporte",
+        "discount": 0,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 29,
+                "image": "assets/products/vendaje.png"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Medias Antideslizantes",
+        "price": 9.00,
+        "image": "assets/products/mediascortas.png",
+        "images": [
+            "assets/products/mediascortas.png",
+            "assets/products/mediascortas.png"
+        ],
+        "description": "Calcetines antideslizantes para mujer, calcetines de yoga Pilates con doble rayas antideslizantes para entrenamientos, ballet, calcetines deportivos",
+        "category": "deporte",
+        "discount": 10,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 5,
+                "image": "assets/products/vendaje.png"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Short Corto",
+        "price": 30.00,
+        "image": "assets/products/shortcorto.png",
+        "images": [
+            "assets/products/shortcorto.png",
+            "assets/products/shortcorto2.png"
+        ],
+        "description": "Calcetines antideslizantes para mujer, calcetines de yoga Pilates con doble rayas antideslizantes para entrenamientos, ballet, calcetines deportivos",
+        "category": "deporte",
+        "discount": 10,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "M",
+                "stock": 1,
+                "image": "assets/products/shortcorto.png"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Calcetines antideslizantes",
+        "price": 9.00,
+        "image": "assets/products/mediaslargas.png",
+        "images": [
+            "assets/products/mediaslargas.png",
+            "assets/products/mediaslargas.png"
+        ],
+        "description": "Calcetines antideslizantes , calcetines de futbol con 7 rayas antideslizantes para entrenamientos, ballet, calcetines deportivos",
+        "category": "deporte",
+        "discount": 0,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Negro",
+                "size": "Única",
+                "stock": 6,
+                "image": "assets/products/mediaslargas.png"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Poleras",
+        "price": 35.00,
+        "image": "assets/products/poleras.png",
+        "images": [
+            "assets/products/poleras.png",
+            "assets/products/polerablanca.png",
+            "assets/products/poleranegra.png",
+            "assets/products/poleramarron.png"
+        ],
+        "description": "Sudadera con capucha de manga larga con bolsillo de tipo canguro, Tops de manga larga",
+        "category": "ropa",
+        "discount": 10,
+        "featured": true,
+        "variants": [
+            {
+                "color": "Blanca",
+                "size": "M",
+                "stock": 1,
+                "image": "assets/products/polerablanca.png"
+            },
+            {
+                "color": "Negra",
+                "size": "M",
+                "stock": 1,
+                "image": "assets/products/poleranegra.png"
+            },
+            {
+                "color": "Marron",
+                "size": "M",
+                "stock": 1,
+                "image": "assets/products/poleramarron.png"
+            }
+        ]
+    }
+]
